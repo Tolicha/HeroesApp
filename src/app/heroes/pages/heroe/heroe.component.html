@@ -1,1 +1,18 @@
-<p>heroe works!</p>
+<mat-grid-list cols="1" *ngIf="!heroe; else divHeroe">
+  <mat-grid-tile>
+    <mat-spinner></mat-spinner>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divHeroe>
+  <div
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxLayoutGap="30px">
+      <div fxFlex="50">
+        <h1>{{heroe.superhero}} <small>{{heroe.alter_ego}}</small></h1>
+      </div>
+      <div fxFlex="50">2</div>
+  </div>
+
+</ng-template>
